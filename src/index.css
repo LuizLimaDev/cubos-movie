@@ -1,69 +1,22 @@
-@import "@radix-ui/colors/purple.css";
-@import "@radix-ui/colors/mauve.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+inter roboto Montserrat :root {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-
-  --purple-1: #fefcfe;
-  --purple-2: #fbf7fe;
-  --purple-3: #f7edfe;
-  --purple-4: #f2e2fc;
-  --purple-5: #ead5f9;
-  --purple-6: #e0c4f4;
-  --purple-7: #d1afec;
-  --purple-8: #be93e4;
-  --purple-9: #8e4ec6;
-  --purple-10: #8347b9;
-  --purple-11: #8145b5;
-  --purple-12: #402060;
-
-  --purple-dark-1: #18111b;
-  --purple-dark-2: #1e1523;
-  --purple-dark-3: #301c3b;
-  --purple-dark-4: #3d224e;
-  --purple-dark-5: #48295c;
-  --purple-dark-6: #54346b;
-  --purple-dark-7: #664282;
-  --purple-dark-8: #8457aa;
-  --purple-dark-9: #8e4ec6;
-  --purple-dark-10: #9a5cd0;
-  --purple-dark-11: #d19dff;
-  --purple-dark-12: #ecd9fa;
-
-  --mauve-1: #fdfcfd;
-  --mauve-2: #faf9fb;
-  --mauve-3: #f2eff3;
-  --mauve-4: #eae7ec;
-  --mauve-5: #e3dfe6;
-  --mauve-6: #dbd8e0;
-  --mauve-7: #d0cdd7;
-  --mauve-8: #bcbac7;
-  --mauve-9: #8e8c99;
-  --mauve-10: #84828e;
-  --mauve-11: #65636d;
-  --mauve-12: #211f26;
-
-  --mauve-dark-1: #121113;
-  --mauve-dark-2: #1a191b;
-  --mauve-dark-3: #232225;
-  --mauve-dark-4: #2b292d;
-  --mauve-dark-5: #323035;
-  --mauve-dark-6: #3c393f;
-  --mauve-dark-7: #49474e;
-  --mauve-dark-8: #625f69;
-  --mauve-dark-9: #6f6d78;
-  --mauve-dark-10: #7c7a85;
-  --mauve-dark-11: #b5b2bc;
-  --mauve-dark-12: #eeeef0;
 }
 
 @layer base {
+  body {
+    background-image: url("./assets/background.png");
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 @layer components {
