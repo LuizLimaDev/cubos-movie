@@ -1,57 +1,69 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: ["class"],
-    content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
+  darkMode: ["class"],
+  content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
-  	extend: {
-  		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		},
-  		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
-  			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			}
-  		}
-  	}
+    extend: {
+      screens: {
+        mobile: "360px",
+        tablet: "740px",
+        laptop: "1280px",
+      },
+      colors: {
+        purple: {
+          "cm-purple-1": "var(--purple-1)",
+          "cm-purple-2": "var(--purple-2)",
+          "cm-purple-3": "var(--purple-3)",
+          "cm-purple-4": "var(--purple-4)",
+          "cm-purple-5": "var(--purple-5)",
+          "cm-purple-6": "var(--purple-6)",
+          "cm-purple-7": "var(--purple-7)",
+          "cm-purple-8": "var(--purple-8)",
+          "cm-purple-9": "var(--purple-9)",
+          "cm-purple-10": "var(--purple-10)",
+          "cm-purple-11": "var(--purple-11)",
+          "cm-purple-12": "var(--purple-12)",
+          "dark-1": "var(--purple-dark-1)",
+          "dark-2": "var(--purple-dark-2)",
+          "dark-3": "var(--purple-dark-3)",
+          "dark-4": "var(--purple-dark-4)",
+          "dark-5": "var(--purple-dark-5)",
+          "dark-6": "var(--purple-dark-6)",
+          "dark-7": "var(--purple-dark-7)",
+          "dark-8": "var(--purple-dark-8)",
+          "dark-9": "var(--purple-dark-9)",
+          "dark-10": "var(--purple-dark-10)",
+          "dark-11": "var(--purple-dark-11)",
+          "dark-12": "var(--purple-dark-12)",
+        },
+        mauve: {
+          1: "var(--mauve-1)",
+          2: "var(--mauve-2)",
+          3: "var(--mauve-3)",
+          4: "var(--mauve-4)",
+          5: "var(--mauve-5)",
+          6: "var(--mauve-6)",
+          7: "var(--mauve-7)",
+          8: "var(--mauve-8)",
+          9: "var(--mauve-9)",
+          10: "var(--mauve-10)",
+          11: "var(--mauve-11)",
+          12: "var(--mauve-12)",
+          "dark-1": "var(--mauve-dark-1)",
+          "dark-2": "var(--mauve-dark-2)",
+          "dark-3": "var(--mauve-dark-3)",
+          "dark-4": "var(--mauve-dark-4)",
+          "dark-5": "var(--mauve-dark-5)",
+          "dark-6": "var(--mauve-dark-6)",
+          "dark-7": "var(--mauve-dark-7)",
+          "dark-8": "var(--mauve-dark-8)",
+          "dark-9": "var(--mauve-dark-9)",
+          "dark-10": "var(--mauve-dark-10)",
+          "dark-11": "var(--mauve-dark-11)",
+          "dark-12": "var(--mauve-dark-12)",
+        },
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };
