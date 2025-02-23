@@ -17,7 +17,9 @@ export default function PaginationControl({
   return (
     <div className="flex-center m-6 gap-3">
       <button
-        className={`${currentPage === 1 && "bg-mauveDark-4"} flex-center h-11 w-12 bg-purpleDark-9 text-mauveDark-12`}
+        className={`${currentPage === 1 ? "bg-mauveDark-4" : "bg-purpleDark-9"} flex-center h-11 w-12 text-mauveDark-12`}
+        onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+        disabled={currentPage === 1}
       >
         <img src={arrowPages} alt="voltar página" className="rotate-180" />
       </button>
@@ -25,7 +27,7 @@ export default function PaginationControl({
         return (
           <button
             key={page}
-            className={`${currentPage === 1 && page === 1 && "bg-mauveDark-4"} ${currentPage === lastPage && page == lastPage && "bg-mauveDark-4"} ${page === currentPage ? "bg-purpleDark-6" : "bg-purpleDark-9"} h-11 w-12 text-mauveDark-12`}
+            className={`${page === currentPage ? "bg-purpleDark-6" : "bg-purpleDark-9"} h-11 w-12 text-mauveDark-12`}
             onClick={() => setCurrentPage(page)}
           >
             {page}
@@ -34,7 +36,11 @@ export default function PaginationControl({
       })}
 
       <button
-        className={`${currentPage === lastPage && "bg-mauveDark-4"} flex-center h-11 w-12 bg-purpleDark-9 text-mauveDark-12`}
+        className={`${currentPage === lastPage ? "bg-mauveDark-4" : "bg-purpleDark-9"} flex-center h-11 w-12 text-mauveDark-12`}
+        onClick={() =>
+          currentPage < pages.length && setCurrentPage(currentPage + 1)
+        }
+        disabled={currentPage === lastPage}
       >
         <img src={arrowPages} alt="avançar página" />
       </button>

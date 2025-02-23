@@ -7,7 +7,7 @@ module.exports = {
       screens: {
         mobile: "414px",
         tablet: "740px",
-        laptop: "1366px",
+        desktop: "1366px",
       },
       fontFamily: {
         roboto: ["Roboto", "serif"],

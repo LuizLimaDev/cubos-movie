@@ -7,7 +7,7 @@ export default function MoviesLayout() {
     usePaginationData();
   const lastPage = pages.length;
 
-  console.log("filmes: ", currentMovies);
+  // console.log("filmes: ", currentMovies);
   console.log(
     "página atual: ",
     currentPage,
