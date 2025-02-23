@@ -15,5 +15,5 @@ export default function usePaginationData() {
 
   const { pages } = usePaginationPages({ totalMovies, moviesPerPage });
 
-  return { currentMovies, currentPage, setCurrentPage, pages };
+  return { currentMovies, currentPage, setCurrentPage, pages, totalMovies };
 }
