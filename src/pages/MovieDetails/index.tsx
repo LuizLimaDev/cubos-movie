@@ -65,7 +65,7 @@ export default function MovieDetails() {
           </p>
         </div>
 
-        <div className="mt-2v flex justify-between gap-4">
+        <div className="my-6 flex justify-between gap-4">
           <div className="cards-details-container w-[136px]">
             <p className="cards-details-title">Pouparidade</p>
             <span className="font-montserrat text-sm font-semibold text-mauveDark-12">
