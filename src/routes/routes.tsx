@@ -9,7 +9,7 @@ export default function MainRoutes() {
     <Routes>
       <Route element={<BasicLayout />}>
         <Route path="/" element={<App />} />
-        <Route path="/moviedetails" element={<MovieDetails />} />
+        <Route path="/moviedetails/:id" element={<MovieDetails />} />
       </Route>
     </Routes>
   );
