@@ -15,6 +15,7 @@ module.exports = {
         inter: ["Inter", "serif"],
       },
       colors: {
+        cm_yellow: "#FFE000",
         purpleDark: {
           1: "#18111b",
           2: "#1e1523",

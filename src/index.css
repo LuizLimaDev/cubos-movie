@@ -26,4 +26,11 @@ inter roboto Montserrat :root {
   .flex-center {
     @apply flex items-center justify-center;
   }
+
+  .cards-details-container {
+    @apply my-2 rounded-sm bg-mauveDark-3/75 p-4;
+  }
+  .cards-details-title {
+    @apply font-montserrat text-xs font-bold uppercase text-mauveDark-11;
+  }
 }

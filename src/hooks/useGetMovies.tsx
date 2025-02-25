@@ -1,9 +1,9 @@
-import { Movie } from "@/interfaces/Movies";
+import { IMovie } from "@/interfaces/Movies";
 import api from "@/services/api";
 import { useEffect, useState } from "react";
 
 export default function useGetMovies() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
 
   async function getMovies() {
     try {
