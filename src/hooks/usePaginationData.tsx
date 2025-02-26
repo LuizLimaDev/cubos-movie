@@ -2,8 +2,8 @@ import { useState } from "react";
 import useGetMovies from "./useGetMovies";
 import usePaginationPages from "./usePaginationPages";
 
-export default function usePaginationData() {
-  const { movies } = useGetMovies();
+export default function usePaginationData(searchParams?: string) {
+  const { movies } = useGetMovies(searchParams);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(10);

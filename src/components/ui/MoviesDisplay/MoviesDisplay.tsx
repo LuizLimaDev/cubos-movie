@@ -1,8 +1,8 @@
-import { IMovie } from "@/interfaces/Movies";
+import { IMovieDetails, IMovieDiscovery } from "@/interfaces/Movies";
 import { Link } from "react-router";
 
 interface moviesDisplayProps {
-  currentMovies: IMovie[];
+  currentMovies: IMovieDiscovery[] | IMovieDetails[];
 }
 
 export default function MoviesDisplay({ currentMovies }: moviesDisplayProps) {

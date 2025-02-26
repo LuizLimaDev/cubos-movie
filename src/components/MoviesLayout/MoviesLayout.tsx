@@ -1,24 +1,28 @@
 import usePaginationData from "@/hooks/usePaginationData";
+import { useState } from "react";
+import NavBar from "../NavBar/NavBar";
 import MoviesDisplay from "../ui/MoviesDisplay/MoviesDisplay";
 import PaginationControl from "../ui/PaginationControl/PaginationControl";
 
 export default function MoviesLayout() {
+  const [queryParams, setQueryParams] = useState<string>("");
+
   const { currentMovies, currentPage, setCurrentPage, pages } =
-    usePaginationData();
+    usePaginationData(queryParams);
   const lastPage = pages.length;
 
-  // console.log("filmes: ", currentMovies);
-  console.log(
-    "página atual: ",
-    currentPage,
-    "total movies: ",
-    pages,
-    "ultima pagina: ",
-    lastPage,
-  );
+  // console.log(
+  //   "página atual: ",
+  //   currentPage,
+  //   "total movies: ",
+  //   pages,
+  //   "ultima pagina: ",
+  //   lastPage,
+  // );
 
   return (
     <section>
+      <NavBar setQueryParams={setQueryParams} />
       <MoviesDisplay currentMovies={currentMovies} />
 
       <PaginationControl

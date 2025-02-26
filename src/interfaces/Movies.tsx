@@ -28,7 +28,7 @@ interface BelongsToCollection {
   backdrop_path: string;
 }
 
-export interface IMovie {
+export interface IMovieDiscovery {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];

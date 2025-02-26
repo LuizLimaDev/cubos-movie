@@ -1,9 +1,11 @@
-import { IMovie } from "@/interfaces/Movies";
+import { IMovieDetails, IMovieDiscovery } from "@/interfaces/Movies";
 import api from "@/services/api";
 import { useEffect, useState } from "react";
 
-export default function useGetMovies() {
-  const [movies, setMovies] = useState<IMovie[]>([]);
+export default function useGetMovies(queryParams?: string | undefined) {
+  const [movies, setMovies] = useState<IMovieDiscovery[] | IMovieDetails[]>([]);
+  const [totalPages, setTotalPAges] = useState<number>(1);
+  const searchParams = queryParams && encodeURIComponent(queryParams);
 
   async function getMovies() {
     try {
@@ -17,11 +19,33 @@ export default function useGetMovies() {
     }
   }
 
+  async function searchMovie(params: string | undefined) {
+    if (params === undefined) return;
+
+    try {
+      const { data } = await api.get(
+        `/search/movie?query=${params}&include_adult=false&language=pt-Br&page=1
+`,
+      );
+
+      setMovies(data.results);
+      setTotalPAges(data.total_pages);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
+    if (searchParams) {
+      searchMovie(searchParams);
+      return;
+    }
     getMovies();
-  }, []);
+  }, [searchParams]);
 
   return {
     movies,
+    searchMovie,
+    totalPages,
   };
 }
