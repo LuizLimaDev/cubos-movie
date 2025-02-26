@@ -11,15 +11,6 @@ export default function MoviesLayout() {
     usePaginationData(queryParams);
   const lastPage = pages.length;
 
-  // console.log(
-  //   "página atual: ",
-  //   currentPage,
-  //   "total movies: ",
-  //   pages,
-  //   "ultima pagina: ",
-  //   lastPage,
-  // );
-
   return (
     <section className="colorTheme">
       <NavBar setQueryParams={setQueryParams} />

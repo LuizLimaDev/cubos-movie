@@ -4,7 +4,7 @@ interface IGenre {
   translation: string;
 }
 
-const genres: IGenre[] = [
+export const genres: IGenre[] = [
   {
     id: 28,
     name: "Action",

@@ -43,4 +43,12 @@ inter roboto Montserrat :root {
   .colorTheme {
     @apply border-purpleDark-1 bg-mauve-1 text-purpleDark-1 dark:border-mauveDark-7 dark:bg-mauveDark-1 dark:text-mauve-1;
   }
+
+  .filter-title {
+    @apply font-bold uppercase text-purple-9 dark:text-mauve-1;
+  }
+
+  .filter-cards {
+    @apply rounded bg-purple-9 p-2 text-mauveDark-12 dark:bg-purpleDark-4/70 dark:text-mauveDark-12;
+  }
 }
