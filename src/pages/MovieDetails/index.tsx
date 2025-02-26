@@ -98,7 +98,10 @@ export default function MovieDetails() {
           <p className="cards-details-title">Generos</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {movieSelected?.genres.map((genre) => (
-              <p className="flex items-center justify-self-center bg-purpleDark-4 p-2 text-center font-montserrat text-xs font-semibold uppercase text-mauveDark-11">
+              <p
+                key={genre.id}
+                className="flex items-center justify-self-center bg-purpleDark-4 p-2 text-center font-montserrat text-xs font-semibold uppercase text-mauveDark-11"
+              >
                 {translateGenre(genre.id)}
               </p>
             ))}
