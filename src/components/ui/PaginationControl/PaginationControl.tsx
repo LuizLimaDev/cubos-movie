@@ -15,7 +15,7 @@ export default function PaginationControl({
   lastPage,
 }: paginationProps) {
   return (
-    <div className="flex-center m-6 gap-3">
+    <div className="flex-center colorTheme gap-3 p-6">
       <button
         className={`${currentPage === 1 ? "bg-mauveDark-4" : "bg-purpleDark-9"} flex-center h-11 w-12 text-mauveDark-12`}
         onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}

@@ -19,9 +19,8 @@ inter roboto Montserrat :root {
     /* background-image: url("./assets/background.png");
     background-size: cover;
     background-position: center; */
-    background-color: black;
 
-    @apply text-mauveDark-11;
+    @apply text-purpleDark-1 dark:text-mauveDark-11;
   }
 }
 
@@ -31,9 +30,17 @@ inter roboto Montserrat :root {
   }
 
   .cards-details-container {
-    @apply my-2 rounded-sm bg-mauveDark-3/75 p-4;
+    @apply my-2 rounded-sm border border-purple-9 p-4 dark:border-none dark:bg-mauveDark-3/75;
   }
   .cards-details-title {
-    @apply font-montserrat text-xs font-bold uppercase text-mauveDark-11;
+    @apply font-montserrat text-xs font-bold uppercase text-purpleDark-9 dark:text-mauveDark-11;
+  }
+
+  .cards-text {
+    @apply font-montserrat text-sm text-mauveDark-1 dark:text-mauveDark-12;
+  }
+
+  .colorTheme {
+    @apply border-purpleDark-1 bg-mauve-1 text-purpleDark-1 dark:border-mauveDark-7 dark:bg-mauveDark-1 dark:text-mauve-1;
   }
 }

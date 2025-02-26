@@ -14,7 +14,7 @@ export default function CmSmallButton({
 }: ButtonProps) {
   return (
     <button
-      className={`${className} flex-center h-12 w-16 rounded-sm bg-purpleDark-4/30`}
+      className={`${className} flex-center dark: h-12 w-16 rounded-sm bg-purpleDark-9 dark:bg-purpleDark-4/70`}
       {...props}
     >
       <img src={src} alt={alt} width={24} height={24} />

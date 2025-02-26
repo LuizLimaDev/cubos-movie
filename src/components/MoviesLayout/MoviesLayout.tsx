@@ -21,7 +21,7 @@ export default function MoviesLayout() {
   // );
 
   return (
-    <section>
+    <section className="colorTheme">
       <NavBar setQueryParams={setQueryParams} />
       <MoviesDisplay currentMovies={currentMovies} />
 

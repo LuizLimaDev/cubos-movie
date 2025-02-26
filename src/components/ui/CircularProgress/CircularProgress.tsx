@@ -16,7 +16,7 @@ export default function CircularProgress({ percentage }: Iprops) {
           cy="18"
           r="16"
           fill="none"
-          className="stroke-current text-mauveDark-7 dark:text-neutral-700"
+          className="stroke-current text-purpleDark-12 dark:text-mauveDark-7"
           strokeWidth="2"
         ></circle>
 
@@ -26,7 +26,7 @@ export default function CircularProgress({ percentage }: Iprops) {
           cy="18"
           r="16"
           fill="none"
-          className="stroke-current text-cm_yellow dark:text-cm_yellow"
+          className="stroke-current text-purple-9 dark:text-cm_yellow"
           strokeWidth="2"
           strokeDasharray="100"
           strokeDashoffset={(Number(percentage) - 100).toString()}
@@ -35,9 +35,11 @@ export default function CircularProgress({ percentage }: Iprops) {
 
       {/* <!-- Percentage Text --> */}
       <div className="absolute start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-        <span className="text-center font-montserrat text-xl font-semibold text-cm_yellow dark:text-cm_yellow">
+        <span className="text-center font-montserrat text-xl font-semibold text-purple-9 dark:text-cm_yellow">
           {percentage}
-          <span className="text-xs text-mauveDark-12">%</span>
+          <span className="text-xs text-purple-9 dark:text-mauveDark-12">
+            %
+          </span>
         </span>
       </div>
     </div>

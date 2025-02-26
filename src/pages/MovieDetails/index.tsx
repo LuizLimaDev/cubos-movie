@@ -43,7 +43,7 @@ export default function MovieDetails() {
   }, [id]);
 
   return (
-    <section className="flex flex-col items-center justify-center bg-mauveDark-1 p-4">
+    <section className="colorTheme flex flex-col items-center justify-center p-4">
       <img
         src={`https://image.tmdb.org/t/p/original/${movieSelected?.poster_path}`}
         alt={`poster do filme ${movieSelected?.poster_path}`}
@@ -54,13 +54,13 @@ export default function MovieDetails() {
 
       <div className="my-4">
         <div>
-          <h3 className="font-montserrat text-[32px] font-semibold text-mauveDark-12">
+          <h3 className="font-montserrat text-[32px] font-semibold text-purple-9 dark:text-mauveDark-12">
             {movieSelected?.title}
           </h3>
           <p className="font-montserrat text-base">
             Título original: {movieSelected?.original_title}
           </p>
-          <p className="font-montserrat italic text-mauveDark-12">
+          <p className="font-montserrat italic text-purple-9 dark:text-mauveDark-12">
             {movieSelected?.tagline}
           </p>
         </div>
@@ -68,14 +68,14 @@ export default function MovieDetails() {
         <div className="my-6 flex justify-between gap-4">
           <div className="cards-details-container w-[136px]">
             <p className="cards-details-title">Pouparidade</p>
-            <span className="font-montserrat text-sm font-semibold text-mauveDark-12">
+            <span className="cards-text font-semibold">
               {movieSelected?.popularity}
             </span>
           </div>
 
           <div className="cards-details-container w-[116px]">
             <p className="cards-details-title">Votos</p>
-            <span className="font-montserrat text-sm font-semibold text-mauveDark-12">
+            <span className="cards-text font-semibold">
               {movieSelected?.vote_average}
             </span>
           </div>
@@ -89,9 +89,7 @@ export default function MovieDetails() {
 
         <div className="cards-details-container">
           <p className="cards-details-title mb-2 text-sm">Sinopse</p>
-          <p className="font-montserrat text-base font-extralight text-mauveDark-12">
-            {movieSelected?.overview}
-          </p>
+          <p className="cards-text">{movieSelected?.overview}</p>
         </div>
 
         <div className="cards-details-container mt-4">
@@ -100,7 +98,7 @@ export default function MovieDetails() {
             {movieSelected?.genres.map((genre) => (
               <p
                 key={genre.id}
-                className="flex items-center justify-self-center bg-purpleDark-4 p-2 text-center font-montserrat text-xs font-semibold uppercase text-mauveDark-11"
+                className="flex items-center justify-self-center bg-purple-9 p-2 text-center font-montserrat text-xs font-semibold uppercase text-mauveDark-12 dark:bg-purpleDark-4 dark:text-mauveDark-11"
               >
                 {translateGenre(genre.id)}
               </p>
@@ -173,7 +171,7 @@ export default function MovieDetails() {
       </div>
 
       <div>
-        <h1 className="mb-4 font-montserrat text-2xl font-bold text-mauveDark-12">
+        <h1 className="mb-4 font-montserrat text-2xl font-bold text-purple-9 dark:text-mauveDark-12">
           Trailer
         </h1>
         <YouTube videoId={video?.key} opts={trailerOpts} />

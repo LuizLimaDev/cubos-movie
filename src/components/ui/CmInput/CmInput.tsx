@@ -17,12 +17,12 @@ export default function CmInput({
   let timer;
 
   return (
-    <div className="flex-center h-14 w-[80%] justify-between rounded border border-mauveDark-7 bg-mauveDark-2 px-4 py-[18.5px]">
+    <div className="flex-center ligth h-14 w-[80%] justify-between rounded border border-mauveDark-7 px-4 py-[18.5px]">
       <input
         type={type}
         placeholder={placeholder}
         {...props}
-        className="bg-mauveDark-2 pl-2 placeholder:text-mauveDark-9"
+        className="colorTheme pl-2 placeholder:text-mauveDark-9"
         onChange={(e) => {
           clearTimeout(timer);
 

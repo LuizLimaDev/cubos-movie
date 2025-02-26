@@ -7,7 +7,7 @@ interface moviesDisplayProps {
 
 export default function MoviesDisplay({ currentMovies }: moviesDisplayProps) {
   return (
-    <div className="rounded bg-mauveDark-3 p-4">
+    <div className="colorTheme rounded p-4">
       <ul className="flex w-full flex-wrap items-center justify-around gap-4">
         {currentMovies.map((movie) => (
           <li key={movie.id} className="relative">
