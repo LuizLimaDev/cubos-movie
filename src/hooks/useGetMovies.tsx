@@ -44,7 +44,7 @@ export default function useGetMovies(
           : [filterByGenre];
 
         const filteredResults = result.filter((movie) => {
-          return movie.genre_ids.some((genreId) =>
+          return movie.genres.some((genreId) =>
             genresToFilter.includes(Number(genreId)),
           );
         });
