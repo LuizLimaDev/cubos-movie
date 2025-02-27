@@ -15,7 +15,7 @@ export default function MoviesLayout() {
   const lastPage = pages.length;
 
   return (
-    <section className="colorTheme">
+    <section className="colorTheme dark:bg-[url('./assets/background.png')] desktop:px-[22px]">
       <NavBar setQueryParams={setQueryParams} setGenreFilter={setGenreFilter} />
       <MoviesDisplay currentMovies={currentMovies} />
 

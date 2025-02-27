@@ -1,4 +1,4 @@
-interface Genre {
+export interface IGenre {
   id: number;
   name: string;
 }
@@ -50,7 +50,7 @@ export interface IMovieDetails {
   backdrop_path: string;
   belongs_to_collection: BelongsToCollection;
   budget: number;
-  genre_ids: Genre[];
+  genres: IGenre[];
   homepage: string;
   id: number;
   imdb_id: string;
