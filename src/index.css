@@ -45,7 +45,7 @@ inter roboto Montserrat :root {
   }
 
   .filter-title {
-    @apply font-bold uppercase text-purple-9 dark:text-mauve-1;
+    @apply font-bold uppercase text-mauveDark-1 dark:text-mauve-1;
   }
 
   .filter-cards {

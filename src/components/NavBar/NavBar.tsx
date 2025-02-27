@@ -6,10 +6,13 @@ import CmInput from "../ui/CmInput/CmInput";
 import CmSmallButton from "../ui/CmSmallButton/CmSmallButton";
 
 interface Iprops {
-  setQueryParams: React.Dispatch<React.SetStateAction<string>>;
+  setQueryParams: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setGenreFilter: React.Dispatch<
+    React.SetStateAction<number | number[] | undefined>
+  >;
 }
 
-export default function NavBar({ setQueryParams }: Iprops) {
+export default function NavBar({ setQueryParams, setGenreFilter }: Iprops) {
   const [filterOptions, setFilterOptions] = useState<boolean>();
 
   return (
@@ -21,6 +24,7 @@ export default function NavBar({ setQueryParams }: Iprops) {
           src={searchIcon}
           alt="procurar"
           setQueryParams={setQueryParams}
+          setGenreFilter={setGenreFilter}
         />
 
         <CmSmallButton
@@ -31,16 +35,27 @@ export default function NavBar({ setQueryParams }: Iprops) {
         />
       </div>
       {filterOptions && (
-        <div className="w-[95%] rounded p-4">
+        <div className="flex w-[95%] flex-col rounded p-4">
           <p className="filter-title">gêneros</p>
 
           <div className="flex-center mt-4 flex-wrap gap-2">
             {genres.map((genre) => (
-              <button key={genre.id} className="filter-cards">
+              <button
+                key={genre.id}
+                className="filter-cards"
+                onClick={() => setGenreFilter(genre.id)}
+              >
                 {genre.translation}
               </button>
             ))}
           </div>
+
+          <button
+            className="mt-6 w-[40%] self-center rounded bg-mauveDark-1 py-2 text-mauve-1 dark:bg-mauve-1 dark:text-purple-12"
+            onClick={() => setGenreFilter(undefined)}
+          >
+            <strong className="mr-2">X</strong> Limpar Filtros
+          </button>
         </div>
       )}
     </nav>

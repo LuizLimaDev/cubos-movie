@@ -50,7 +50,7 @@ export interface IMovieDetails {
   backdrop_path: string;
   belongs_to_collection: BelongsToCollection;
   budget: number;
-  genres: Genre[];
+  genre_ids: Genre[];
   homepage: string;
   id: number;
   imdb_id: string;

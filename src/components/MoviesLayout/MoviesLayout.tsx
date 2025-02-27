@@ -5,15 +5,18 @@ import MoviesDisplay from "../ui/MoviesDisplay/MoviesDisplay";
 import PaginationControl from "../ui/PaginationControl/PaginationControl";
 
 export default function MoviesLayout() {
-  const [queryParams, setQueryParams] = useState<string>("");
+  const [queryParams, setQueryParams] = useState<string | undefined>(undefined);
+  const [genreFilter, setGenreFilter] = useState<
+    number | number[] | undefined
+  >();
 
   const { currentMovies, currentPage, setCurrentPage, pages } =
-    usePaginationData(queryParams);
+    usePaginationData(queryParams, genreFilter);
   const lastPage = pages.length;
 
   return (
     <section className="colorTheme">
-      <NavBar setQueryParams={setQueryParams} />
+      <NavBar setQueryParams={setQueryParams} setGenreFilter={setGenreFilter} />
       <MoviesDisplay currentMovies={currentMovies} />
 
       <PaginationControl

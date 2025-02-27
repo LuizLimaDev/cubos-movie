@@ -2,8 +2,11 @@ import { useState } from "react";
 import useGetMovies from "./useGetMovies";
 import usePaginationPages from "./usePaginationPages";
 
-export default function usePaginationData(searchParams?: string) {
-  const { movies } = useGetMovies(searchParams);
+export default function usePaginationData(
+  searchParams?: string,
+  genreFilter?: number | number[],
+) {
+  const { movies } = useGetMovies(searchParams, genreFilter);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(10);
