@@ -22,6 +22,10 @@ inter roboto Montserrat :root {
 
     @apply text-purpleDark-1 dark:text-mauveDark-11;
   }
+
+  button {
+    cursor: pointer;
+  }
 }
 
 @layer components {
@@ -50,5 +54,17 @@ inter roboto Montserrat :root {
 
   .filter-cards {
     @apply rounded bg-purple-9 p-2 text-mauveDark-12 dark:bg-purpleDark-4/70 dark:text-mauveDark-12;
+  }
+
+  .player-wrapper {
+    @apply relative pt-[56.25%];
+  }
+
+  .react-play {
+    @apply absolute left-0 top-0 h-[197px] w-[382px] pb-4 desktop:h-[647px] desktop:w-[1238px];
+  }
+
+  .bg-card-details {
+    @apply bg-none;
   }
 }

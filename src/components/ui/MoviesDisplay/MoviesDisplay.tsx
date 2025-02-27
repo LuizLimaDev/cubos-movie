@@ -7,7 +7,7 @@ interface moviesDisplayProps {
 
 export default function MoviesDisplay({ currentMovies }: moviesDisplayProps) {
   return (
-    <div className="colorTheme rounded p-4">
+    <div className="rounded p-4 dark:bg-mauveDark-12/10 desktop:py-6">
       <ul className="flex w-full flex-wrap items-center justify-around gap-4">
         {currentMovies.map((movie) => (
           <li key={movie.id} className="relative">
@@ -20,14 +20,6 @@ export default function MoviesDisplay({ currentMovies }: moviesDisplayProps) {
               <p className="absolute bottom-4 left-4 font-montserrat text-sm font-bold uppercase text-mauveDark-12 shadow-md hover:bottom-8">
                 {movie.title}
               </p>
-
-              {/* <div className="absolute bottom-4 w-[47.9%]">
-              {movie.genre_ids.map((id) => {
-                return (
-                  <p className="font-montserrat text-xs">{translateGenre(id)} </p>
-                );
-              })}
-            </div> */}
             </Link>
           </li>
         ))}

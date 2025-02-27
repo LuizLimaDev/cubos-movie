@@ -51,7 +51,7 @@ export default function NavBar({ setQueryParams, setGenreFilter }: Iprops) {
           </div>
 
           <button
-            className="mt-6 w-[40%] self-center rounded bg-mauveDark-1 py-2 text-mauve-1 dark:bg-mauve-1 dark:text-purple-12"
+            className="mt-6 w-[40%] self-center rounded bg-mauveDark-1 py-2 text-mauve-1 dark:bg-mauve-1 dark:text-purple-12 desktop:w-[15%]"
             onClick={() => setGenreFilter(undefined)}
           >
             <strong className="mr-2">X</strong> Limpar Filtros

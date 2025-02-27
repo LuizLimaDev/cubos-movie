@@ -37,7 +37,7 @@ export default function CmInput({
   }
 
   return (
-    <div className="flex-center ligth h-14 w-[80%] justify-between rounded border border-mauveDark-7 px-4 py-[18.5px]">
+    <div className="flex-center ligth h-14 w-[80%] max-w-[488px] justify-between rounded border border-mauveDark-7 px-4 py-[18.5px]">
       <input
         type={type}
         placeholder={placeholder}
