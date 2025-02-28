@@ -6,7 +6,7 @@ export default function usePaginationData(
   searchParams?: string,
   genreFilter?: number | number[],
 ) {
-  const { movies } = useGetMovies(searchParams, genreFilter);
+  const { movies, totalPages } = useGetMovies(searchParams, genreFilter);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(10);
@@ -14,7 +14,7 @@ export default function usePaginationData(
   const lastMoviesIndex = currentPage * moviesPerPage; // 10
   const firstMoviesIndex = lastMoviesIndex - moviesPerPage; // 0
   const currentMovies = movies.slice(firstMoviesIndex, lastMoviesIndex);
-  const totalMovies = movies.length;
+  const totalMovies = totalPages;
 
   const { pages } = usePaginationPages({ totalMovies, moviesPerPage });
 

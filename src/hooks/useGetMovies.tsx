@@ -7,19 +7,20 @@ export default function useGetMovies(
   filterByGenre?: number | number[] | undefined,
 ) {
   const [movies, setMovies] = useState<IMovieDiscovery[] | IMovieDetails[]>([]);
-  const [totalPages, setTotalPAges] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const searchParams =
     queryParams !== "" && queryParams && encodeURIComponent(queryParams);
 
-  async function getMovies(filterByGenre?: number | number[] | undefined) {
-    const url = filterByGenre
-      ? `/discover/movie?include_adult=false&include_video=false&language=pt-Br&page=1&region=pt-Br&sort_by=popularity.desc&with_genres=${filterByGenre}`
-      : `/discover/movie?include_adult=false&include_video=false&language=pt-Br&page=1&region=pt-Br&sort_by=popularity.desc`;
-
+  async function getMovies() {
     try {
-      const { data } = await api.get(url);
+      const { data } = await api.get(
+        `/discover/movie?include_adult=false&include_video=false&language=pt-Br&page=1&region=pt-Br&sort_by=popularity.desc`,
+      );
 
       setMovies(data.results);
+      setTotalPages(data.total_pages);
+      setCurrentPage(data.page);
     } catch (error) {
       console.log(error);
     }
@@ -50,12 +51,15 @@ export default function useGetMovies(
         });
 
         setMovies(filteredResults);
-        setTotalPAges(data.total_pages);
+        setTotalPages(data.total_pages);
+        setCurrentPage(data.page);
+
         return;
       }
 
       setMovies(result);
-      setTotalPAges(data.total_pages);
+      setTotalPages(data.total_pages);
+      setCurrentPage(data.page);
     } catch (error) {
       console.log(error);
     }
@@ -66,6 +70,7 @@ export default function useGetMovies(
       searchMovie(searchParams, filterByGenre);
       return;
     }
+
     getMovies();
   }, [searchParams, filterByGenre]);
 
@@ -73,5 +78,9 @@ export default function useGetMovies(
     movies,
     searchMovie,
     totalPages,
+    setMovies,
+    setTotalPages,
+    setCurrentPage,
+    currentPage,
   };
 }
